@@ -1,75 +1,47 @@
-# 🛒 Walmart Sales Analysis Using SQL
+# Walmart Sales Data Analysis with SQL
 
-## 📂 Project Overview
-This project involves a complete sales analysis of a Walmart store's transactional data using MySQL. The goal was to derive business insights through data cleaning, feature engineering, exploratory analysis, and business KPI calculations.
+An in-depth analysis of Walmart sales data using SQL to uncover insights into product performance, customer behavior, and sales trends.
 
----
+## Project Description
 
-## 📋 Objectives
-- Analyze sales trends across different times of the day, days of the week, and months.
-- Identify the top-performing product lines, cities, and branches.
-- Understand customer behaviors based on type, gender, and payment methods.
-- Calculate key business metrics: revenue, COGS, VAT, gross income, and gross margin.
+This project leverages SQL to analyze Walmart's sales data, focusing on:
+- Identifying top-performing branches and products
+- Analyzing sales trends across different product categories
+- Understanding customer purchasing behavior
+- Evaluating the effectiveness of sales strategies
 
----
+The dataset is sourced from the Kaggle Walmart Sales Forecasting Competition, which provides historical sales data for 45 Walmart stores, including holiday markdown events.
 
-## 🛠️ Tools and Technologies
-- **Database**: MySQL
-- **Language**: SQL
-- **Dataset**: Walmart Sales Data (10,000+ records)
+## Data Overview
 
----
+The dataset comprises sales transactions from three Walmart branches located in Mandalay, Yangon, and Naypyitaw. It includes 17 columns and 1,000 rows, detailing:
+- Invoice ID
+- Branch and city
+- Customer type and gender
+- Product line and unit price
+- Quantity sold and VAT
+- Total cost, date, time, and payment method
+- Cost of Goods Sold (COGS) and gross margin percentage
+- Gross income and customer rating
 
-## 📈 Key Activities
-- **Database and Table Creation**: Structured the Walmart sales dataset into a MySQL table.
-- **Data Cleaning**: Fixed date formats and handled time issues using `STR_TO_DATE()` and `CAST()`.
-- **Feature Engineering**:
-  - Created `time_of_day` based on transaction times (Morning, Afternoon, Evening).
-  - Extracted `day_name` and `month_name` from the Date column.
-- **Business Analysis**:
-  - Analyzed sales by product line, city, branch, customer type, and gender.
-  - Identified top-selling product lines and branches.
-  - Calculated VAT (5%), COGS, total sales, gross income, and gross margin percentages.
-- **Advanced SQL Usage**:
-  - Used subqueries and CTEs for cleaner, modular queries.
-  - Applied aggregation (`AVG()`, `SUM()`), conditional statements (`CASE WHEN THEN`), and grouping (`GROUP BY`).
+## Analysis Objectives
 
----
+The primary objectives of this analysis include:
+- Evaluating product line performance
+- Assessing sales trends over time
+- Segmenting customers based on purchasing behavior
+- Identifying factors influencing sales across different branches
 
-## 📊 Business Questions Answered
-- How many unique cities and branches are in the data?
-- What are the most popular product lines and payment methods?
-- Which city generates the highest revenue?
-- Which product lines perform above the average sales quantity?
-- What are the customer types and gender distribution?
-- When do customers make the most purchases and give the highest ratings?
+## SQL Queries
 
----
+The project includes a series of SQL queries organized into categories:
+- **Product Analysis:** Insights into product line performance and sales trends.
+- **Sales Analysis:** Examination of sales data over time, including seasonal trends.
+- **Customer Analysis:** Understanding customer segments and purchasing patterns.
 
-## 📚 Key Learnings
-- Real-world data preparation and cleaning using SQL.
-- Business thinking applied to retail sales datasets.
-- Feature engineering to enhance dataset insights.
-- Hands-on experience with KPIs, gross margin, revenue, and profit calculations.
-- Clear, modular SQL coding practices with CTEs.
+## Installation & Setup Instructions
 
----
-
-## 🚀 Future Enhancements
-- Build an interactive Power BI Dashboard based on this data analysis.
-- Create predictive models for sales forecasting using machine learning.
-
----
-
-## 📑 Sample SQL Queries Used
-
-```sql
--- Add time of day based on transaction time
-UPDATE walmart_sales
-SET time_of_day = 
-  CASE 
-    WHEN HOUR(Time) BETWEEN 0 AND 11 THEN 'Morning'
-    WHEN HOUR(Time) BETWEEN 12 AND 15 THEN 'Afternoon'
-    ELSE 'Evening'
-  END;
-
+To replicate this analysis:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Aditya-pratap-singh-source/walmart-sales-sql.git
